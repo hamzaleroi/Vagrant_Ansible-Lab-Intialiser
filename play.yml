@@ -1,0 +1,12 @@
+---
+- name: collective jobs
+  hosts: 
+    localhost
+  gather_facts: no
+  tasks:
+    - name: assembling keys in one file
+      tags: assembling
+      assemble:
+        src: "./public_keys/"
+        regexp: "pub$"
+        dest: "~/.ssh/known_hosts"
